@@ -1,4 +1,4 @@
-var BigNumber = require('bignumber.js')
+var DecimalJS = require('decimal.js')
 
 var Units = {}
 
@@ -6,7 +6,7 @@ var rawUnits = require('./units.json')
 var units = {}
 
 Object.keys(rawUnits).map(function (unit) {
-  units[unit] = new BigNumber(rawUnits[unit], 10)
+  units[unit] = new DecimalJS(rawUnits[unit], 10)
 })
 
 Units.units = rawUnits
@@ -28,7 +28,7 @@ Units.convert = function (value, from, to) {
     throw new Error('Unsupported output unit')
   }
 
-  return new BigNumber(value, 10).mul(units[from]).round(0, BigNumber.ROUND_DOWN).div(units[to]).toString(10)
+  return new DecimalJS(value, 10).mul(units[from]).round(0, DecimalJS.ROUND_DOWN).div(units[to]).toFixed(6)
 }
 
 Units.lazyConvert = function (value, to) {

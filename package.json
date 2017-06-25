@@ -1,7 +1,7 @@
 {
-  "name": "ethereumjs-units",
+  "name": "units-convert",
   "version": "0.2.0",
-  "description": "Ethereum unit conversion.",
+  "description": "Crypto's coin unit conversion.",
   "main": "index.js",
   "scripts": {
     "coverage": "istanbul cover _mocha",
@@ -16,6 +16,7 @@
   },
   "keywords": [
     "ethereum",
+    "bitcoin",
     "units",
     "conversion"
   ],
@@ -26,7 +27,7 @@
   },
   "homepage": "https://github.com/ethereumjs/ethereumjs-units#readme",
   "dependencies": {
-    "bignumber.js": "^2.3.0"
+    "decimal.js": "^7.2.1"
   },
   "devDependencies": {
     "coveralls": "^2.11.4",
